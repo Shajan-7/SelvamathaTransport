@@ -438,7 +438,7 @@
             <h3 class="booking-title" data-i18n="quote_box_title">⚡ WhatsApp Fast Booking</h3>
             <p class="booking-desc" data-i18n="quote_box_desc">Enter your pickup and delivery locations to book directly.</p>
 
-            <form id="fastQuoteForm">
+            <form id="fastQuoteForm" action="javascript:void(0);" onsubmit="event.preventDefault(); return false;">
               <div class="form-row">
                 <div class="input-field">
                   <label for="quoteOrigin" data-i18n="lbl_origin">Pickup Point</label>
@@ -472,24 +472,24 @@
                 </svg>
                 <span data-i18n="btn_send_whatsapp">Send Booking Request on WhatsApp</span>
               </button>
-
-              <!-- Collapsible Feedback Form Trigger (Opened ONLY on click) -->
-              <div class="feedback-toggle-row">
-                <button type="button" id="toggleFeedbackBtn" class="btn-feedback-toggle interactive" data-i18n="btn_open_feedback">
-                  📋 Click Here to Open Feedback / Query Form
-                </button>
-              </div>
-
-              <!-- Collapsible Google Form Container -->
-              <div id="feedbackFormContainer" class="feedback-form-container" style="display: none;">
-                <iframe 
-                  id="gformIframe" 
-                  src="https://docs.google.com/forms/d/e/1FAIpQLSdh4uUCoWiiYrnZvAKXpI1gOI8L1jnyY-4OrlKUu4pcEaONmw/viewform?embedded=true" 
-                  loading="lazy" 
-                  title="Selvamatha Transport Feedback Form"
-                >Loading Feedback Form...</iframe>
-              </div>
             </form>
+
+            <!-- Collapsible Feedback Form Trigger (Opened ONLY on click) -->
+            <div class="feedback-toggle-row">
+              <button type="button" id="toggleFeedbackBtn" class="btn-feedback-toggle interactive" data-i18n="btn_open_feedback">
+                📋 Click Here to Open Feedback / Query Form
+              </button>
+            </div>
+
+            <!-- Collapsible Google Form Container -->
+            <div id="feedbackFormContainer" class="feedback-form-container" style="display: none;">
+              <iframe 
+                id="gformIframe" 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdh4uUCoWiiYrnZvAKXpI1gOI8L1jnyY-4OrlKUu4pcEaONmw/viewform?embedded=true" 
+                loading="lazy" 
+                title="Selvamatha Transport Feedback Form"
+              >Loading Feedback Form...</iframe>
+            </div>
           </div>
         </div>
       </div>

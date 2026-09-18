@@ -58,8 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============================================================================
      2. SMOOTH SCROLL (GSAP & LENIS SMOOTH SCROLLER)
      ============================================================================ */
+  let lenisInstance = null;
   if (typeof Lenis !== 'undefined') {
-    const lenis = new Lenis({
+    lenisInstance = new Lenis({
       duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
@@ -67,17 +68,63 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      lenisInstance.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenisInstance.raf(time * 1000));
       gsap.ticker.lagSmoothing(0);
     } else {
       function raf(time) {
-        lenis.raf(time);
+        lenisInstance.raf(time);
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
     }
   }
+
+  /* Safe Internal Anchor Click Navigation (Prevents file:// Cross-Origin Security Errors) */
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const hash = anchor.getAttribute('href');
+      if (!hash || hash === '#') return;
+      const targetEl = document.querySelector(hash);
+      if (targetEl) {
+        e.preventDefault();
+
+        // If mobile nav drawer is open, close it
+        const mobileToggleEl = document.getElementById('mobileToggle');
+        const navMenuEl = document.getElementById('navMenu');
+        if (navMenuEl && navMenuEl.classList.contains('is-open')) {
+          navMenuEl.classList.remove('is-open');
+          document.body.style.overflow = '';
+          if (mobileToggleEl) {
+            mobileToggleEl.setAttribute('aria-expanded', 'false');
+            const icon = mobileToggleEl.querySelector('svg');
+            if (icon) {
+              icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+            }
+          }
+        }
+
+        const navHeight = 72;
+        if (lenisInstance && typeof lenisInstance.scrollTo === 'function') {
+          lenisInstance.scrollTo(targetEl, { offset: -navHeight });
+        } else {
+          const targetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - navHeight;
+          window.scrollTo({
+            top: targetTop,
+            behavior: 'smooth'
+          });
+        }
+
+        try {
+          if (window.location.protocol !== 'file:' && window.history && window.history.pushState) {
+            window.history.pushState(null, '', hash);
+          }
+        } catch (_) {
+          // Gracefully ignored on restricted file:// origins
+        }
+      }
+    });
+  });
 
   /* ============================================================================
      3. LIGHT & DARK THEME SWITCHER
@@ -375,37 +422,48 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============================================================================
      6. FAST QUOTE & WHATSAPP DISPATCHER (INPUT BOXES)
      ============================================================================ */
+  const fastQuoteForm = document.getElementById('fastQuoteForm');
   const quoteOrigin = document.getElementById('quoteOrigin');
   const quoteDest = document.getElementById('quoteDest');
   const quoteCargo = document.getElementById('quoteCargo');
   const quoteWeight = document.getElementById('quoteWeight');
   const btnWhatsappSubmit = document.getElementById('btnWhatsappSubmit');
 
-  if (btnWhatsappSubmit) {
-    btnWhatsappSubmit.addEventListener('click', (e) => {
+  function handleFastQuoteSubmit(e) {
+    if (e) {
       e.preventDefault();
-      const o = quoteOrigin && quoteOrigin.value.trim() ? quoteOrigin.value.trim() : 'Tamil Nadu';
-      const d = quoteDest && quoteDest.value.trim() ? quoteDest.value.trim() : 'Kerala';
-      const cargo = quoteCargo && quoteCargo.value.trim() ? quoteCargo.value.trim() : 'General Goods / Freight';
-      const w = quoteWeight ? quoteWeight.value : '10-16 Tons';
+      if (typeof e.stopPropagation === 'function') e.stopPropagation();
+    }
+    const o = quoteOrigin && quoteOrigin.value.trim() ? quoteOrigin.value.trim() : 'Tamil Nadu';
+    const d = quoteDest && quoteDest.value.trim() ? quoteDest.value.trim() : 'Kerala';
+    const cargo = quoteCargo && quoteCargo.value.trim() ? quoteCargo.value.trim() : 'General Goods / Freight';
+    const w = quoteWeight ? quoteWeight.value : '10-16 Tons';
 
-      const msg = `*SELVAMATHA TRANSPORT - TRUCK BOOKING INQUIRY*%0A` +
-        `----------------------------------------%0A` +
-        `📍 *Pickup Point:* ${encodeURIComponent(o)}%0A` +
-        `🏁 *Delivery Point:* ${encodeURIComponent(d)}%0A` +
-        `📦 *Cargo Details:* ${encodeURIComponent(cargo)}%0A` +
-        `⚖️ *Weight:* ${encodeURIComponent(w)}%0A` +
-        `----------------------------------------%0A` +
-        `Please send available truck & best rate.`;
+    const msg = `*SELVAMATHA TRANSPORT - TRUCK BOOKING INQUIRY*%0A` +
+      `----------------------------------------%0A` +
+      `📍 *Pickup Point:* ${encodeURIComponent(o)}%0A` +
+      `🏁 *Delivery Point:* ${encodeURIComponent(d)}%0A` +
+      `📦 *Cargo Details:* ${encodeURIComponent(cargo)}%0A` +
+      `⚖️ *Weight:* ${encodeURIComponent(w)}%0A` +
+      `----------------------------------------%0A` +
+      `Please send available truck & best rate.`;
 
-      const waUrl = `https://wa.me/919487366449?text=${msg}`;
+    const waUrl = `https://wa.me/919487366449?text=${msg}`;
 
-      if (window.SelvamathaAnalytics) {
-        window.SelvamathaAnalytics.sendCustomEvent('whatsapp_booking_click', { o, d, cargo, w });
-      }
+    if (window.SelvamathaAnalytics) {
+      window.SelvamathaAnalytics.sendCustomEvent('whatsapp_booking_click', { o, d, cargo, w });
+    }
 
-      window.open(waUrl, '_blank', 'noopener,noreferrer');
-    });
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+    return false;
+  }
+
+  if (fastQuoteForm) {
+    fastQuoteForm.addEventListener('submit', handleFastQuoteSubmit);
+  }
+
+  if (btnWhatsappSubmit) {
+    btnWhatsappSubmit.addEventListener('click', handleFastQuoteSubmit);
   }
 
   /* ============================================================================
