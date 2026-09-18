@@ -1104,21 +1104,22 @@ button, input, select, textarea {
 }
 
 .founder-caption {
-  padding: 1rem 1.15rem;
+  padding: 0.85rem 0.95rem;
   background: var(--bg-surface);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 84px;
+  min-height: 78px;
 }
 
 .founder-name {
   display: block;
   font-family: var(--font-heading);
-  font-size: 0.98rem;
+  font-size: clamp(0.78rem, 1.05vw, 0.86rem);
   font-weight: 700;
   color: var(--text-main);
-  line-height: 1.35;
+  line-height: 1.25;
+  white-space: nowrap;
 }
 
 .founder-role {
