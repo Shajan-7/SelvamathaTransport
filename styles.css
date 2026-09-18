@@ -780,9 +780,31 @@ button, input, select, textarea {
   line-height: 1.6;
 }
 
+.section-header .section-desc {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.3;
+  margin-top: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+#about-fleet .section-header .section-desc,
+#quote .section-header .section-desc {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .services-grid-5 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
@@ -1170,13 +1192,23 @@ button, input, select, textarea {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(2rem, 4vw, 3.5rem);
-  align-items: center;
+  align-items: stretch;
 }
 
 .contact-box {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1.25rem;
+}
+
+.contact-box .section-desc {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.4vw, 1.95rem);
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.25;
+  margin-bottom: 0.25rem;
 }
 
 .contact-item {
@@ -1256,7 +1288,8 @@ button, input, select, textarea {
   overflow: hidden;
   border: 1px solid var(--border-glass);
   box-shadow: var(--shadow-lg);
-  height: 400px;
+  min-height: 380px;
+  height: 100%;
 }
 
 .map-card iframe {
@@ -1325,8 +1358,10 @@ button, input, select, textarea {
 }
 
 /* ==============================================================================
-   RESPONSIVE BREAKPOINTS
+   RESPONSIVE BREAKPOINTS (DESKTOP, TABLET, MOBILE)
    ============================================================================== */
+
+/* Large Desktop / Laptop (max-width: 1200px) */
 @media (max-width: 1200px) {
   .header-controls .btn-header-call {
     display: none;
@@ -1339,6 +1374,7 @@ button, input, select, textarea {
   }
 }
 
+/* Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
   :root {
     --header-height: 76px;
@@ -1355,8 +1391,8 @@ button, input, select, textarea {
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: flex-start;
-    padding: 2rem;
-    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+    gap: 1.75rem;
     transform: translateX(-100%);
     transition: transform var(--transition-normal);
     z-index: 999;
@@ -1369,11 +1405,14 @@ button, input, select, textarea {
   }
 
   .nav-item a {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
+    font-weight: 700;
   }
 
   .mobile-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .header-controls .btn-header-call {
@@ -1382,16 +1421,18 @@ button, input, select, textarea {
 
   .hero-grid {
     grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 
   .hero-visual-card {
     max-width: 680px;
     margin: 0 auto;
+    width: 100%;
   }
 
   .hero-stats-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
   }
 
   .about-grid, .contact-grid {
@@ -1400,12 +1441,28 @@ button, input, select, textarea {
 
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 }
 
+/* Medium Tablet & Small Devices (max-width: 991px) */
+@media (max-width: 991px) {
+  .services-grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .hero-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* Small Tablet / Phablet (max-width: 768px) */
 @media (max-width: 768px) {
   .about-founders-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
 
   .form-row {
@@ -1414,26 +1471,234 @@ button, input, select, textarea {
 
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .map-card {
+    height: 320px;
+    min-height: 320px;
   }
 }
 
-@media (max-width: 480px) {
+/* Mobile Devices (max-width: 640px) */
+@media (max-width: 640px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  /* Single-line header stability on mobile */
+  .brand-badge {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-badge img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-link {
+    gap: 0.6rem;
+  }
+
+  .brand-title {
+    font-size: 1.05rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+  }
+
+  .header-controls {
+    gap: 0.45rem;
+  }
+
+  .lang-btn {
+    padding: 0.28rem 0.5rem;
+    font-size: 0.72rem;
+  }
+
+  .theme-toggle-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .btn-header-whatsapp span {
+    display: none;
+  }
+
+  .btn-header-whatsapp {
+    padding: 0.45rem;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    justify-content: center;
+  }
+
+  /* Hero Section Mobile */
+  .hero-title {
+    font-size: clamp(1.75rem, 7vw, 2.4rem);
+    line-height: 1.2;
+  }
+
+  .hero-key-points {
+    gap: 0.65rem;
+  }
+
+  .key-point-item {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
   .hero-cta-row {
     flex-direction: column;
     width: 100%;
+    gap: 0.75rem;
   }
 
   .hero-cta-row a {
     width: 100%;
+    text-align: center;
   }
 
-  .hero-visual-card img {
-    height: 320px;
+  .hero-logo-showcase {
+    min-height: 280px;
+    padding: 1.75rem 1.25rem 4.5rem;
+  }
+
+  .hero-logo-showcase img {
+    max-height: 190px;
+  }
+
+  .hero-image-caption {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .caption-route {
+    font-size: 0.82rem;
+  }
+
+  .caption-tag {
+    font-size: 0.72rem;
+  }
+
+  /* Services Grid Mobile */
+  .services-grid-5 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .service-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* Fleet Bar Mobile */
+  .fleet-info-bar {
+    padding: 1.2rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .fleet-reg-row {
+    width: 100%;
+  }
+
+  .about-founders-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Booking Card Mobile */
+  .booking-card {
+    padding: 1.35rem 1.1rem;
+  }
+
+  .btn-whatsapp-submit {
+    padding: 0.85rem 1rem;
+    font-size: 0.92rem;
+    line-height: 1.35;
+  }
+
+  .btn-feedback-toggle {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.82rem;
+    padding: 0.65rem 1rem;
+  }
+
+  .feedback-form-container iframe {
+    height: 560px;
+  }
+
+  /* Contact Items & Phone Pills Mobile */
+  .contact-item {
+    padding: 1rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .phone-pills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 0.65rem;
+  }
+
+  .phone-btn {
+    text-align: center;
+    justify-content: center;
+    padding: 0.45rem 0.5rem;
+    font-size: 0.8rem;
+    width: 100%;
+    display: flex;
+  }
+
+  .map-card {
+    height: 280px;
+    min-height: 280px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}
+
+/* Extra Small Phones (max-width: 400px) */
+@media (max-width: 400px) {
+  .brand-subtitle {
+    display: none;
+  }
+
+  .brand-title {
+    font-size: 0.98rem;
+  }
+
+  .btn-header-whatsapp {
+    display: none;
+  }
+
+  .lang-btn {
+    padding: 0.25rem 0.38rem;
+    font-size: 0.68rem;
   }
 
   .hero-stats-row {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.9rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .stat-num {
+    font-size: 1.25rem;
+  }
+
+  .phone-pills {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1464,30 +1729,26 @@ html[lang="ml"] * {
 
 html[lang="ta"] .hero-title,
 html[lang="ml"] .hero-title {
-  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
-  line-height: 1.35;
+  font-size: clamp(1.65rem, 5.5vw, 2.75rem);
+  line-height: 1.3;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
 
-html[lang="ta"] .section-title,
-html[lang="ml"] .section-title {
-  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+html[lang="ta"] .section-header .section-desc,
+html[lang="ml"] .section-header .section-desc,
+html[lang="ta"] .contact-box .section-desc,
+html[lang="ml"] .contact-box .section-desc {
+  font-size: clamp(1.2rem, 2.2vw, 1.75rem);
   line-height: 1.35;
   word-break: keep-all;
   overflow-wrap: break-word;
-}
-
-html[lang="ta"] .hero-desc,
-html[lang="ml"] .hero-desc {
-  line-height: 1.8;
-  font-size: 1rem;
 }
 
 html[lang="ta"] .service-title,
 html[lang="ml"] .service-title {
   line-height: 1.35;
-  font-size: 1.08rem;
+  font-size: 1.05rem;
 }
 
 html[lang="ta"] .btn-whatsapp-large,
@@ -1502,23 +1763,23 @@ html[lang="ml"] .btn-primary {
 
 html[lang="ta"] .nav-item a,
 html[lang="ml"] .nav-item a {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
+}
+
+html[lang="ta"] .stat-num,
+html[lang="ml"] .stat-num {
+  font-size: clamp(1.15rem, 3.8vw, 1.7rem);
 }
 
 html[lang="ta"] .stat-lbl,
 html[lang="ml"] .stat-lbl {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   line-height: 1.35;
-}
-
-html[lang="ta"] .corridor-notice-text,
-html[lang="ml"] .corridor-notice-text {
-  line-height: 1.6;
 }
 
 html[lang="ta"] .key-point-item,
 html[lang="ml"] .key-point-item {
-  line-height: 1.7;
-  font-size: 0.95rem;
+  line-height: 1.65;
+  font-size: 0.92rem;
 }
 
