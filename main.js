@@ -140,7 +140,9 @@ document.addEventListener('DOMContentLoaded', () => {
       corridor_text: " We pickup and deliver load anywhere in Tamil Nadu and Kerala (always exploring new locations). Multiple pickup and multiple delivery available at nominal cost.",
       sec_services_tag: "What We Offer",
       sec_services_title: "Reliable, Affordable & Safe Freight",
-      sec_services_desc: "Choose the exact transport solution you need with transparent pricing and full cargo safety.",
+      sec_services_desc: "15+ vehicles in partner to deliver streamline trucks on time and every time.",
+      srv_6_title: "15+ Partner Vehicles",
+      srv_6_desc: "15+ vehicles in partner to deliver streamline trucks on time and every time.",
       srv_1_title: "Full Truck Load (FTL)",
       srv_1_desc: "Dedicated lorry just for your consignment. Direct point-to-point transit from pickup to destination with zero delays.",
       srv_2_title: "Part Load Freight (LTL)",
@@ -168,8 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
       sec_quote_desc: "Type your pickup and drop towns for immediate rate and availability via WhatsApp.",
       quote_box_title: "⚡ WhatsApp Fast Booking",
       quote_box_desc: "Enter your pickup and delivery locations to book directly.",
-      lbl_origin: "Pickup Town (Tamil Nadu)",
-      lbl_dest: "Delivery Town (Kerala)",
+      lbl_origin: "Pickup Point",
+      lbl_dest: "Delivery Point",
       lbl_cargo: "Cargo / Goods Description",
       lbl_weight: "Estimated Weight",
       btn_send_whatsapp: "Send Booking Request on WhatsApp",
@@ -208,7 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
       corridor_text: " தமிழ்நாடு ⇄ கேரளா மற்றும் கேரளா ⇄ தமிழ்நாடு முழுவதும் எங்கிருந்தும் சரக்குகளை ஏற்றி குறித்த நேரத்தில் இறக்குகிறோம். குறைந்த செலவில் பல இடங்களில் ஏற்றுதல் (Multiple Pickup) மற்றும் பல இடங்களில் இறக்குதல் (Multiple Delivery) வசதி உண்டு.",
       sec_services_tag: "எங்கள் சேவைகள்",
       sec_services_title: "பாதுகாப்பான & நம்பகமான போக்குவரத்து",
-      sec_services_desc: "வெளிப்படையான கட்டணத்துடன் உங்களுக்கு தேவையான சேவையை தேர்வு செய்யுங்கள்.",
+      sec_services_desc: "எப்போதும் குறித்த நேரத்தில் சரக்குகளை சேர்க்க 15+ வாகனங்கள் தயார் நிலையில் உள்ளன.",
+      srv_6_title: "15+ வாகனங்கள்",
+      srv_6_desc: "எப்போதும் குறித்த நேரத்தில் சரக்குகளை சேர்க்க 15+ வாகனங்கள் தயார் நிலையில் உள்ளன.",
       srv_1_title: "முழு லாரி சுமை (FTL)",
       srv_1_desc: "உங்கள் சரக்குக்கு மட்டும் தனி லாரி ஒதுக்கீடு. ஏற்றுமிடத்திலிருந்து இறங்குமிடம் வரை நேரடி பயணம்.",
       srv_2_title: "பகுதி சுமை சேவை (LTL)",
@@ -236,8 +240,8 @@ document.addEventListener('DOMContentLoaded', () => {
       sec_quote_desc: "வாட்ஸ்அப் மூலமாக எளிதாக முன்பதிவு செய்யுங்கள்.",
       quote_box_title: "⚡ உடனடி வாட்ஸ்அப் முன்பதிவு",
       quote_box_desc: "ஊர் மற்றும் சரக்கு விபரத்தை தட்டச்சு செய்யவும்.",
-      lbl_origin: "ஏற்றும் ஊர் (தமிழ்நாடு)",
-      lbl_dest: "இறக்கும் ஊர் (கேரளா)",
+      lbl_origin: "ஏற்றும் இடம்",
+      lbl_dest: "இறக்கும் இடம்",
       lbl_cargo: "சரக்கு வகை",
       lbl_weight: "எடை அளவு",
       btn_send_whatsapp: "வாட்ஸ்அப்பில் முன்பதிவு செய்ய கிளிக் செய்க",
@@ -276,7 +280,9 @@ document.addEventListener('DOMContentLoaded', () => {
       corridor_text: " തമിഴ്‌നാട് ⇄ കേരളം സർവീസുകൾ. തമിഴ്‌നാട്ടിലും കേരളത്തിലും എവിടെനിന്നും ചരക്കുകൾ കയറ്റുകയും ഇറക്കുകയും ചെയ്യുന്നു. കുറഞ്ഞ ചെലവിൽ മൾട്ടിപ്പിൾ പിക്കപ്പും മൾട്ടിപ്പിൾ ഡെലിവറിയും ലഭ്യമാണ്.",
       sec_services_tag: "ഞങ്ങളുടെ സേവനങ്ങൾ",
       sec_services_title: "സുരക്ഷിതവും വിശ്വസനീയവുമായ സേവനങ്ങൾ",
-      sec_services_desc: "സുതാര്യമായ നിരക്കുകളിൽ മികച്ച സേവനങ്ങൾ തിരഞ്ഞെടുക്കുക.",
+      sec_services_desc: "എപ്പോഴും കൃത്യസമയത്ത് സാധനങ്ങൾ എത്തിക്കാൻ 15+ വാഹനങ്ങൾ പങ്കാളിയായി ഉണ്ട്.",
+      srv_6_title: "15+ വാഹനങ്ങൾ",
+      srv_6_desc: "എപ്പോഴും കൃത്യസമയത്ത് സാധനങ്ങൾ എത്തിക്കാൻ 15+ വാഹനങ്ങൾ പങ്കാളിയായി ഉണ്ട്.",
       srv_1_title: "ഫുൾ ട്രക്ക് ലോഡ് (FTL)",
       srv_1_desc: "നിങ്ങളുടെ ചരക്കുകൾക്കായി മാത്രം പ്രത്യേക ലോറി. നേരിട്ട് منزلത്തിൽ എത്തിക്കുന്നു.",
       srv_2_title: "പാർട്ട് ലോഡ് സർവീസ് (LTL)",
@@ -304,8 +310,8 @@ document.addEventListener('DOMContentLoaded', () => {
       sec_quote_desc: "വാട്ട്‌സ്ആപ്പ് വഴി വേഗത്തിൽ ബുക്ക് ചെയ്യുക.",
       quote_box_title: "⚡ തത്സമയ വാട്ട്‌സ്ആപ്പ് ബുക്കിംഗ്",
       quote_box_desc: "റൂട്ടും ഭാരവും ടൈപ്പ് ചെയ്യുക.",
-      lbl_origin: "കയറ്റുന്ന സ്ഥലം (തമിഴ്‌നാട്)",
-      lbl_dest: "ഇറക്കുന്ന സ്ഥലം (കേരളം)",
+      lbl_origin: "കയറ്റുന്ന സ്ഥലം",
+      lbl_dest: "ഇറക്കുന്ന സ്ഥലം",
       lbl_cargo: "ചരക്ക് ഇനം",
       lbl_weight: "ഭാരം",
       btn_send_whatsapp: "വാട്ട്‌സ്ആപ്പിൽ ബുക്കിംഗ് സന്ദേശം അയക്കുക",
@@ -391,34 +397,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const quoteDest = document.getElementById('quoteDest');
   const quoteCargo = document.getElementById('quoteCargo');
   const quoteWeight = document.getElementById('quoteWeight');
-  const calcRoute = document.getElementById('calcRoute');
   const btnWhatsappSubmit = document.getElementById('btnWhatsappSubmit');
-
-  function updateRouteCalc() {
-    if (!quoteOrigin || !quoteDest || !calcRoute) return;
-    const o = quoteOrigin.value.trim() || 'Origin';
-    const d = quoteDest.value.trim() || 'Destination';
-    calcRoute.textContent = `${o} ➔ ${d}`;
-  }
-
-  if (quoteOrigin && quoteDest) {
-    quoteOrigin.addEventListener('input', updateRouteCalc);
-    quoteDest.addEventListener('input', updateRouteCalc);
-    updateRouteCalc();
-  }
 
   if (btnWhatsappSubmit) {
     btnWhatsappSubmit.addEventListener('click', (e) => {
       e.preventDefault();
-      const o = quoteOrigin && quoteOrigin.value.trim() ? quoteOrigin.value.trim() : 'Tenkasi';
-      const d = quoteDest && quoteDest.value.trim() ? quoteDest.value.trim() : 'Kochi';
+      const o = quoteOrigin && quoteOrigin.value.trim() ? quoteOrigin.value.trim() : 'Tamil Nadu';
+      const d = quoteDest && quoteDest.value.trim() ? quoteDest.value.trim() : 'Kerala';
       const cargo = quoteCargo && quoteCargo.value.trim() ? quoteCargo.value.trim() : 'General Goods / Freight';
       const w = quoteWeight ? quoteWeight.value : '10-16 Tons';
 
       const msg = `*SELVAMATHA TRANSPORT - TRUCK BOOKING INQUIRY*%0A` +
         `----------------------------------------%0A` +
-        `📍 *Pickup Location:* ${encodeURIComponent(o)}%0A` +
-        `🏁 *Delivery Location:* ${encodeURIComponent(d)}%0A` +
+        `📍 *Pickup Point:* ${encodeURIComponent(o)}%0A` +
+        `🏁 *Delivery Point:* ${encodeURIComponent(d)}%0A` +
         `📦 *Cargo Details:* ${encodeURIComponent(cargo)}%0A` +
         `⚖️ *Weight:* ${encodeURIComponent(w)}%0A` +
         `----------------------------------------%0A` +

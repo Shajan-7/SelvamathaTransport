@@ -217,7 +217,7 @@
           <span class="section-tag" data-i18n="sec_services_tag">What We Offer</span>
           <h2 class="section-title" data-i18n="sec_services_title">Reliable, Affordable &amp; Safe Freight</h2>
           <p class="section-desc" data-i18n="sec_services_desc">
-            Choose the exact transport solution you need with transparent pricing and full cargo safety.
+            15+ vehicles in partner to deliver streamline trucks on time and every time.
           </p>
         </div>
 
@@ -285,6 +285,19 @@
             <h3 class="service-title" data-i18n="srv_5_title">Safe &amp; Reliable Trucks</h3>
             <p class="service-desc" data-i18n="srv_5_desc">
               Superior safety and trained partners. Heavy waterproof tarpaulins and continuous route monitoring.
+            </p>
+          </div>
+
+          <!-- Service 6: 15+ Partner Vehicles -->
+          <div class="service-card interactive">
+            <div class="service-icon">
+              <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="service-title" data-i18n="srv_6_title">15+ Partner Vehicles</h3>
+            <p class="service-desc" data-i18n="srv_6_desc">
+              15+ vehicles in partner to deliver streamline trucks on time and every time.
             </p>
           </div>
         </div>
@@ -397,13 +410,13 @@
             <form id="fastQuoteForm">
               <div class="form-row">
                 <div class="input-field">
-                  <label for="quoteOrigin" data-i18n="lbl_origin">Pickup Town (Tamil Nadu)</label>
-                  <input type="text" id="quoteOrigin" class="interactive" placeholder="e.g. Tenkasi, Madurai, Chennai..." value="Tenkasi">
+                  <label for="quoteOrigin" data-i18n="lbl_origin">Pickup Point</label>
+                  <input type="text" id="quoteOrigin" class="interactive" placeholder="Enter pickup town or location...">
                 </div>
 
                 <div class="input-field">
-                  <label for="quoteDest" data-i18n="lbl_dest">Delivery Town (Kerala)</label>
-                  <input type="text" id="quoteDest" class="interactive" placeholder="e.g. Kochi, Kollam, Trivandrum..." value="Kochi">
+                  <label for="quoteDest" data-i18n="lbl_dest">Delivery Point</label>
+                  <input type="text" id="quoteDest" class="interactive" placeholder="Enter delivery town or location...">
                 </div>
               </div>
 
@@ -420,11 +433,6 @@
                   <option value="10 to 16 Tons" selected>10 to 16 Tons (Standard Lorry)</option>
                   <option value="16 to 25 Tons">16 to 25 Tons (Heavy Multi-Axle)</option>
                 </select>
-              </div>
-
-              <div class="calc-preview">
-                <span>Route: <strong id="calcRoute">Tenkasi ➔ Kochi</strong></span>
-                <span class="calc-time">Direct Highway Transit</span>
               </div>
 
               <button type="button" id="btnWhatsappSubmit" class="btn-whatsapp-submit interactive">
