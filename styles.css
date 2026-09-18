@@ -1821,24 +1821,6 @@ button, input, select, textarea {
     font-weight: 700;
     color: var(--text-main);
   }
-}
-
-/* Extra Small Phones (max-width: 400px) */
-@media (max-width: 400px) {
-  .brand-subtitle {
-    display: none; /* Hide subtitle on tiny screens so logo + title + lang + theme + hamburger have massive breathing room */
-  }
-
-  .header-controls {
-    gap: 0.25rem;
-  }
-
-  .lang-btn {
-    padding: 0.2rem 0.32rem;
-    font-size: 0.68rem;
-  }
-}
-
 
   /* Hero Section Mobile */
   .hero-title {
@@ -1983,12 +1965,16 @@ button, input, select, textarea {
     font-size: 0.98rem;
   }
 
+  .header-controls {
+    gap: 0.25rem;
+  }
+
   .btn-header-whatsapp {
     display: none;
   }
 
   .lang-btn {
-    padding: 0.25rem 0.38rem;
+    padding: 0.2rem 0.32rem;
     font-size: 0.68rem;
   }
 
