@@ -27,7 +27,7 @@
 
   // Configurable Google Apps Script Web App Endpoint
   // Replace this placeholder with your live Google Apps Script Web App URL:
-  const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz_REPLACE_WITH_YOUR_DEPLOYED_APP_SCRIPT_URL/exec';
+  const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxFSgcKDEMCRL3Y0YeZxYnuOm0DlTHFj0bmf4VE3xrpmuedZz5Bf1IX1ixZxNZRhNT6/exec';
 
   /**
    * Helper to detect Device Type based on user-agent and viewport width
