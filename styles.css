@@ -508,8 +508,39 @@ button, input, select, textarea {
   font-size: clamp(1rem, 1.2vw, 1.15rem);
   color: var(--text-secondary);
   line-height: 1.7;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   max-width: 600px;
+}
+
+/* Hero Key Summary Bullet Points */
+.hero-key-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  max-width: 620px;
+}
+
+.key-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.point-bullet {
+  color: var(--accent-gold);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  flex-shrink: 0;
+}
+
+.key-point-item strong {
+  color: var(--text-main);
+  font-weight: 700;
 }
 
 .hero-cta-row {
@@ -1483,5 +1514,11 @@ html[lang="ml"] .stat-lbl {
 html[lang="ta"] .corridor-notice-text,
 html[lang="ml"] .corridor-notice-text {
   line-height: 1.6;
+}
+
+html[lang="ta"] .key-point-item,
+html[lang="ml"] .key-point-item {
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
