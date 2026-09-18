@@ -193,12 +193,52 @@
           </div>
         </div>
 
-        <!-- Hero Visual Showcase with Brand Emblem -->
-        <div class="hero-visual-card hero-logo-showcase">
-          <img src="new images/Logo with name.png" alt="Selvamatha Transport Official Logo" width="1136" height="942" loading="eager" fetchpriority="high">
-          <div class="hero-image-caption">
-            <span class="caption-route" data-i18n="caption_route">Heavy Commercial Fleet • Daily Regular Service</span>
-            <span class="caption-tag" data-i18n="caption_status">Trusted Since 1998</span>
+        <!-- Hero Visual Showcase: Auto-Changing Gallery (Lorry 1, 2, 3, 4, Logo, New Logo) -->
+        <div class="hero-visual-card hero-gallery-container" id="heroGallery">
+          <div class="gallery-slides-wrap" id="heroGallerySlides">
+            <div class="gallery-slide is-active" data-index="0">
+              <img src="new images/lorry_4.png" alt="Selvamatha Heavy Commercial Lorry 1" loading="eager"
+                fetchpriority="high">
+            </div>
+            <div class="gallery-slide" data-index="1">
+              <img src="new images/lorry_1.png" alt="Selvamatha Heavy Commercial Lorry 2" loading="lazy">
+            </div>
+            <div class="gallery-slide" data-index="2">
+              <img src="new images/lorry_2.png" alt="Selvamatha Heavy Commercial Lorry 3" loading="lazy">
+            </div>
+            <div class="gallery-slide" data-index="3">
+              <img src="new images/lorry_3.png" alt="Selvamatha Heavy Commercial Lorry 4" loading="lazy">
+            </div>
+            <div class="gallery-slide slide-logo" data-index="4">
+              <img src="new images/crest_round.png" alt="Selvamatha Transport Official Logo" loading="lazy">
+            </div>
+            <div class="gallery-slide slide-logo" data-index="5">
+              <img src="new images/Logo with name.png" alt="Selvamatha Transport Emblem and Name" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Subtle Arrow Navigation Controls -->
+          <button type="button" class="gallery-nav-btn prev interactive" id="galleryPrevBtn"
+            aria-label="Previous Slide">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button type="button" class="gallery-nav-btn next interactive" id="galleryNextBtn" aria-label="Next Slide">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          <!-- Dot Indicators -->
+          <div class="gallery-dots" id="galleryDots" role="tablist" aria-label="Hero Gallery Navigation">
+            <button type="button" class="gallery-dot is-active interactive" data-slide="0"
+              aria-label="Slide 1"></button>
+            <button type="button" class="gallery-dot interactive" data-slide="1" aria-label="Slide 2"></button>
+            <button type="button" class="gallery-dot interactive" data-slide="2" aria-label="Slide 3"></button>
+            <button type="button" class="gallery-dot interactive" data-slide="3" aria-label="Slide 4"></button>
+            <button type="button" class="gallery-dot interactive" data-slide="4" aria-label="Slide 5"></button>
+            <button type="button" class="gallery-dot interactive" data-slide="5" aria-label="Slide 6"></button>
           </div>
         </div>
     </section>
@@ -474,8 +514,7 @@
               </svg>
             </div>
             <div class="contact-info">
-              <h4 data-i18n="contact_phones_title">Dispatch Telephone Lines</h4>
-              <p>Direct lines for immediate truck bookings:</p>
+              <h4 data-i18n="contact_phones_title">Direct contact for immediate bookings</h4>
               <div class="phone-pills">
                 <a href="tel:+919487366449" class="phone-btn primary-phone interactive">+91 9487366449</a>
                 <a href="tel:+919442796261" class="phone-btn interactive">+91 9442796261</a>
@@ -493,7 +532,7 @@
               </svg>
             </div>
             <div class="contact-info">
-              <h4 data-i18n="contact_email_title">Official Email Address</h4>
+              <h4 data-i18n="contact_email_title">Email Address</h4>
               <p>
                 <a href="mailto:support@selvamathatransport.com" class="interactive" style="color: var(--accent-blue); font-weight: 700; display: block; margin-bottom: 0.2rem;">support@selvamathatransport.com</a>
                 <a href="mailto:selvamatha96@gmail.com" class="interactive" style="color: var(--text-muted); font-size: 0.85rem;">selvamatha96@gmail.com</a>
@@ -536,6 +575,10 @@
           <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;" data-i18n="footer_about">
             Premier heavy truck transportation connecting Tamil Nadu and Kerala with safe, fast, and transparent service.
           </p>
+          <div class="footer-open-badge">
+            <span class="footer-open-pulse"></span>
+            <span>24 Hours • 7 Days Open</span>
+          </div>
         </div>
 
         <div class="footer-col">
@@ -568,7 +611,6 @@
             <li><a href="tel:+919487366449" class="interactive" style="color: var(--accent-gold); font-weight: 700;">+91 9487366449</a></li>
             <li><a href="tel:+919442796261" class="interactive">+91 9442796261</a></li>
             <li><a href="mailto:support@selvamathatransport.com" class="interactive">support@selvamathatransport.com</a></li>
-            <li style="color: var(--accent-gold); font-weight: 700; margin-top: 0.5rem;">24 Hours • 7 Days Open</li>
           </ul>
         </div>
       </div>

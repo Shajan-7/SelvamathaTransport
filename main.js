@@ -174,8 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
       btn_open_feedback: "📋 Click Here to Open Feedback / Query Form",
       sec_contact_tag: "Contact Us",
       sec_contact_desc: "24/7 Logistics Booking Desk",
-      contact_phones_title: "Dispatch Telephone Lines",
-      contact_email_title: "Official Email Address",
+      contact_phones_title: "Direct contact for immediate bookings",
+      contact_email_title: "Email Address",
       footer_about: "Premier heavy truck transportation connecting Tamil Nadu and Kerala with safe, fast, and transparent service.",
       footer_designed: "Designed by"
     },
@@ -196,10 +196,10 @@ document.addEventListener('DOMContentLoaded', () => {
       stat_years_lbl: "நம்பகமான சேவை",
       stat_trucks: "15+ லாரிகள்",
       stat_trucks_lbl: "கனரக லாரி படை",
-      stat_staff: "35+ நபர்கள்",
+      stat_staff: "35+ பணியாளர்கள்",
       stat_staff_lbl: "அனுபவமிக்க ஓட்டுநர்கள்",
-      stat_service: "24/7 மணி நேரம்",
-      stat_service_lbl: "தினசரி தொடர் சேவை",
+      stat_service: "24/7 சேவை",
+      stat_service_lbl: "தினசரி தொடர் பயணம்",
       caption_route: "கனரக லாரி படை • தினசரி தொடர் சேவை",
       caption_status: "1998 முதல் நம்பகமான சேவை",
       sec_services_tag: "எங்கள் சேவைகள்",
@@ -238,8 +238,8 @@ document.addEventListener('DOMContentLoaded', () => {
       btn_open_feedback: "📋 கருத்து அல்லது புகார் படிவத்தை திறக்க கிளிக் செய்க",
       sec_contact_tag: "தொடர்புக்கு",
       sec_contact_desc: "24/7 முன்பதிவு மற்றும் தகவல் அலுவலகம்",
-      contact_phones_title: "தொலைபேசி எண்கள்",
-      contact_email_title: "அதிகாரப்பூர்வ மின்னஞ்சல்",
+      contact_phones_title: "உடனடி முன்பதிவுக்கு நேரடி தொடர்பு",
+      contact_email_title: "மின்னஞ்சல் முகவரி",
       footer_about: "தமிழ்நாடு மற்றும் கேரளாவை பாதுகாப்பான, விரைவான மற்றும் வெளிப்படையான சேவையுடன் இணைக்கும் முன்னணி கனரக லாரி போக்குவரத்து.",
       footer_designed: "வடிவமைப்பு:"
     },
@@ -259,11 +259,11 @@ document.addEventListener('DOMContentLoaded', () => {
       stat_years: "25+ വർഷം",
       stat_years_lbl: "വിശ്വസ്ത സേവനം",
       stat_trucks: "15+ ലോറികൾ",
-      stat_trucks_lbl: "ഹെവി കൊമേഴ്‌സ്യൽ ഫ്ലീറ്റ്",
-      stat_staff: "35+ ജീവനക്കാർ",
-      stat_staff_lbl: "പരിചയസമ്പന്നർ",
-      stat_service: "24/7 മണിക്കൂർ",
-      stat_service_lbl: "പ്രതിദിന സർവീസ്",
+      stat_trucks_lbl: "ഹെവി ഫ്ലീറ്റ്",
+      stat_staff: "35+ ഡ്രൈവർമാർ",
+      stat_staff_lbl: "പരിചയസമ്പന്നരായ ജീവനക്കാർ",
+      stat_service: "24/7 സർവീസ്",
+      stat_service_lbl: "പ്രതിദിന സർവീസുകൾ",
       caption_route: "ഹെവി കൊമേഴ്‌സ്യൽ ഫ്ലീറ്റ് • പ്രതിദിന സർവീസ്",
       caption_status: "1998 മുതൽ വിശ്വസ്ത സേവനം",
       sec_services_tag: "ഞങ്ങളുടെ സേവനങ്ങൾ",
@@ -302,8 +302,8 @@ document.addEventListener('DOMContentLoaded', () => {
       btn_open_feedback: "📋 ഫീഡ്‌ബാക്ക് ഫോം തുറക്കാൻ ഇവിടെ ക്ലിക്ക് ചെയ്യുക",
       sec_contact_tag: "ബന്ധപ്പെടുക",
       sec_contact_desc: "24/7 ബുക്കിംഗ് ഡെസ്ക്",
-      contact_phones_title: "ഫോൺ നമ്പറുകൾ",
-      contact_email_title: "ഔദ്യോഗിക ഇമെയിൽ",
+      contact_phones_title: "ഉടനടി ബുക്കിംഗിനായി നേരിട്ട് ബന്ധപ്പെടുക",
+      contact_email_title: "ഇമെയിൽ വിലാസം",
       footer_about: "തമിഴ്‌നാടിനെയും കേരളത്തെയും സുരക്ഷിതവും വേഗമേറിയതും സുതാര്യവുമായ സേവനങ്ങളിലൂടെ ബന്ധിപ്പിക്കുന്ന മുൻനിര ഹെവി ട്രക്ക് ഗതാഗതം.",
       footer_designed: "ഡിസൈൻ ചെയ്തത്:"
     }
@@ -427,5 +427,79 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleFeedbackBtn.textContent = dict.btn_open_feedback || '📋 Click Here to Open Feedback / Query Form';
       }
     });
+  }
+  /* ============================================================================
+     8. HERO GALLERY AUTO-SLIDER (Lorry 1, 2, 3, 4, Logo, New Logo)
+     ============================================================================ */
+  const heroGallery = document.getElementById('heroGallery');
+  if (heroGallery) {
+    const slides = heroGallery.querySelectorAll('.gallery-slide');
+    const dots = heroGallery.querySelectorAll('.gallery-dot');
+    const prevBtn = document.getElementById('galleryPrevBtn');
+    const nextBtn = document.getElementById('galleryNextBtn');
+    let currentSlide = 0;
+    let slideInterval = null;
+
+    function goToSlide(index) {
+      if (!slides.length) return;
+      slides[currentSlide].classList.remove('is-active');
+      if (dots[currentSlide]) dots[currentSlide].classList.remove('is-active');
+
+      currentSlide = (index + slides.length) % slides.length;
+
+      slides[currentSlide].classList.add('is-active');
+      if (dots[currentSlide]) dots[currentSlide].classList.add('is-active');
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentSlide - 1);
+    }
+
+    function startAutoSlide() {
+      stopAutoSlide();
+      slideInterval = setInterval(nextSlide, 3500);
+    }
+
+    function stopAutoSlide() {
+      if (slideInterval) {
+        clearInterval(slideInterval);
+        slideInterval = null;
+      }
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        startAutoSlide();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        startAutoSlide();
+      });
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const slideIndex = parseInt(dot.getAttribute('data-slide'), 10);
+        if (!isNaN(slideIndex)) {
+          goToSlide(slideIndex);
+          startAutoSlide();
+        }
+      });
+    });
+
+    heroGallery.addEventListener('mouseenter', stopAutoSlide);
+    heroGallery.addEventListener('mouseleave', startAutoSlide);
+    heroGallery.addEventListener('touchstart', stopAutoSlide, { passive: true });
+    heroGallery.addEventListener('touchend', startAutoSlide, { passive: true });
+
+    startAutoSlide();
   }
 });
