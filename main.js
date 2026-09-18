@@ -222,7 +222,10 @@ document.addEventListener('DOMContentLoaded', () => {
       contact_phones_title: "Direct contact for immediate bookings",
       contact_email_title: "Email Address",
       footer_about: "Premier heavy truck transportation connecting Tamil Nadu and Kerala with safe, fast, and transparent service.",
-      footer_designed: "Designed by"
+      footer_designed: "Designed by",
+      cookie_msg: "We use cookies and basic analytics to improve your experience, ensure secure bookings, and optimize our freight services. Do you accept cookies?",
+      cookie_accept: "Accept Cookies",
+      cookie_decline: "Decline"
     },
     ta: {
       nav_home: "முகப்பு",
@@ -284,7 +287,10 @@ document.addEventListener('DOMContentLoaded', () => {
       contact_phones_title: "உடனடி முன்பதிவுக்கு நேரடி தொடர்பு",
       contact_email_title: "மின்னஞ்சல் முகவரி",
       footer_about: "தமிழ்நாடு மற்றும் கேரளாவை பாதுகாப்பான, விரைவான மற்றும் வெளிப்படையான சேவையுடன் இணைக்கும் முன்னணி கனரக லாரி போக்குவரத்து.",
-      footer_designed: "வடிவமைப்பு:"
+      footer_designed: "வடிவமைப்பு:",
+      cookie_msg: "எங்கள் இணையதளத்தில் சிறந்த அனுபவம், பாதுகாப்பான லாரி முன்பதிவு மற்றும் சேவையை மேம்படுத்த நாங்கள் குக்கீகளைப் (Cookies) பயன்படுத்துகிறோம். குக்கீகளை ஏற்கிறீர்களா?",
+      cookie_accept: "ஏற்றுக்கொள்",
+      cookie_decline: "நிராகரி"
     },
     ml: {
       nav_home: "ഹോം",
@@ -346,7 +352,10 @@ document.addEventListener('DOMContentLoaded', () => {
       contact_phones_title: "ഉടനടി ബുക്കിംഗിനായി നേരിട്ട് ബന്ധപ്പെടുക",
       contact_email_title: "ഇമെയിൽ വിലാസം",
       footer_about: "തമിഴ്‌നാടിനെയും കേരളത്തെയും സുരക്ഷിതവും വേഗമേറിയതും സുതാര്യവുമായ സേവനങ്ങളിലൂടെ ബന്ധിപ്പിക്കുന്ന മുൻനിര ഹെവി ട്രക്ക് ഗതാഗതം.",
-      footer_designed: "ഡിസൈൻ ചെയ്തത്:"
+      footer_designed: "ഡിസൈൻ ചെയ്തത്:",
+      cookie_msg: "ഞങ്ങളുടെ വെബ്സൈറ്റിൽ മികച്ച അനുഭവം നൽകുന്നതിനും സുരക്ഷിതമായ ചരക്ക് ബുക്കിംഗിനുമായി ഞങ്ങൾ കുക്കികൾ (Cookies) ഉപയോഗിക്കുന്നു. താങ്കൾ കുക്കികൾ സ്വീകരിക്കുന്നുവോ?",
+      cookie_accept: "സ്വീകരിക്കുക",
+      cookie_decline: "നിരസിക്കുക"
     }
   };
 

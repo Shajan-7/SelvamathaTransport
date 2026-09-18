@@ -118,11 +118,18 @@
     }
   }
 
+  const CONSENT_KEY = 'selvamatha_cookie_consent';
+
   /**
    * Main telemetry runner: Gathers client metrics, fetches non-blocking IP & Geolocation,
-   * and sends data to Google Sheets.
+   * and sends data to Google Sheets ONLY when cookie consent is granted.
    */
   async function initTelemetry() {
+    // Strictly require visitor consent before any telemetry or IP lookup
+    if (localStorage.getItem(CONSENT_KEY) !== 'accepted') {
+      return;
+    }
+
     // Avoid double logging in the same session if already tracked recently (within 5 minutes)
     const SESSION_KEY = 'selvamatha_telemetry_last_ping';
     const lastPing = sessionStorage.getItem(SESSION_KEY);
@@ -219,21 +226,64 @@
     sendTelemetryToGoogleSheets(fullTelemetry);
   }
 
-  // Defer execution until page has loaded and browser is idle so performance is never penalized
-  if (document.readyState === 'complete') {
-    if ('requestIdleCallback' in window) {
-      window.requestIdleCallback(initTelemetry, { timeout: 3000 });
-    } else {
-      setTimeout(initTelemetry, 1500);
-    }
-  } else {
-    window.addEventListener('load', () => {
+  /**
+   * Initializes Cookie Consent controller and gates telemetry strictly on user consent
+   */
+  function initConsentAndTelemetry() {
+    const banner = document.getElementById('cookieConsentBanner');
+    const acceptBtn = document.getElementById('cookieAcceptBtn');
+    const declineBtn = document.getElementById('cookieDeclineBtn');
+    const consent = localStorage.getItem(CONSENT_KEY);
+
+    if (consent === 'accepted') {
+      if (banner) banner.style.display = 'none';
       if ('requestIdleCallback' in window) {
         window.requestIdleCallback(initTelemetry, { timeout: 3000 });
       } else {
         setTimeout(initTelemetry, 1500);
       }
-    });
+      return;
+    }
+
+    if (consent === 'declined') {
+      if (banner) banner.style.display = 'none';
+      return; // Respect user choice: zero telemetry
+    }
+
+    // First time visitor: show banner smoothly after a brief delay
+    if (banner) {
+      setTimeout(() => {
+        banner.classList.add('is-visible');
+      }, 1200);
+    }
+
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', () => {
+        localStorage.setItem(CONSENT_KEY, 'accepted');
+        if (banner) {
+          banner.classList.remove('is-visible');
+          setTimeout(() => { banner.style.display = 'none'; }, 500);
+        }
+        initTelemetry();
+      });
+    }
+
+    if (declineBtn) {
+      declineBtn.addEventListener('click', () => {
+        localStorage.setItem(CONSENT_KEY, 'declined');
+        if (banner) {
+          banner.classList.remove('is-visible');
+          setTimeout(() => { banner.style.display = 'none'; }, 500);
+        }
+      });
+    }
+  }
+
+  // Defer execution until DOM is ready
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initConsentAndTelemetry();
+  } else {
+    document.addEventListener('DOMContentLoaded', initConsentAndTelemetry);
   }
 
   // Expose global dispatcher helper if custom events want to log conversions
