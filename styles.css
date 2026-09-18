@@ -618,6 +618,34 @@ button, input, select, textarea {
   transform: scale(1.02);
 }
 
+.hero-logo-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 440px;
+  background: radial-gradient(circle at center, rgba(20, 43, 82, 0.95), var(--bg-primary));
+  padding: 2.5rem 2rem 5rem;
+}
+
+.hero-logo-showcase img {
+  width: auto;
+  max-width: 85%;
+  max-height: 310px;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.45));
+  border-radius: var(--radius-lg);
+  transition: transform var(--transition-smooth);
+}
+
+.hero-logo-showcase:hover img {
+  transform: scale(1.04);
+}
+
+[data-theme="light"] .hero-logo-showcase {
+  background: radial-gradient(circle at center, #FFFFFF, var(--bg-secondary));
+}
+
 .hero-image-caption {
   position: absolute;
   bottom: 0;
