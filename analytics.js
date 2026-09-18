@@ -7,18 +7,10 @@
  * Non-blocking, privacy-respecting client telemetry logging to Google Sheets
  * via Google Apps Script Web App Endpoint.
  * 
- * HOW TO CONNECT TO YOUR GOOGLE SHEET:
- * 1. Create a new Google Sheet (e.g., "Selvamatha Web Visitors").
- * 2. In Google Sheets, click 'Extensions' -> 'Apps Script'.
- * 3. Delete any existing code and paste the code from 'GOOGLE_SHEETS_SCRIPT.js'.
- * 4. Click 'Deploy' -> 'New deployment'.
- * 5. Select type 'Web app'.
- * 6. Set:
- *    - Description: "Selvamatha Telemetry Collector"
- *    - Execute as: "Me"
- *    - Who has access: "Anyone"
- * 7. Click 'Deploy', authorize permissions, and copy the Web App URL.
- * 8. Replace `WEB_APP_URL` below with your deployed Web App URL.
+ * LIVE GOOGLE SHEETS INTEGRATION:
+ * The live Google Apps Script endpoint is connected and active below.
+ * Visitor telemetry is automatically recorded to your Google Sheet
+ * once cookie consent is granted.
  * ==============================================================================
  */
 
