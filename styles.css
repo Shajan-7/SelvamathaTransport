@@ -391,7 +391,7 @@ button, input, select, textarea {
   height: 18px;
 }
 
-/* Header CTA Buttons */
+/* Header CTA Buttons (Primary phone: 9487366449) */
 .btn-header-call {
   display: inline-flex;
   align-items: center;
@@ -644,73 +644,37 @@ button, input, select, textarea {
   text-transform: uppercase;
 }
 
-/* ==============================================================================
-   KEY ROUTES & MULTI-POINT CORRIDOR BANNER
-   ============================================================================== */
-.key-routes-bar {
+/* Clean Corridor Notice Banner */
+.corridor-notice-bar {
   margin-top: 2rem;
   background: var(--bg-card);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-lg);
-  padding: 1.5rem 2rem;
+  padding: 1.25rem 1.75rem;
   box-shadow: var(--shadow-sm);
-}
-
-.key-routes-title-row {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1rem;
 }
 
-.key-routes-title {
-  font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 800;
+.corridor-notice-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.corridor-notice-text {
+  font-size: 0.92rem;
   color: var(--text-main);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.key-routes-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-}
-
-.route-pill {
-  font-size: 0.85rem;
-  font-weight: 700;
-  background: var(--bg-surface);
-  color: var(--text-main);
-  border: 1px solid var(--border-subtle);
-  padding: 0.45rem 0.95rem;
-  border-radius: var(--radius-pill);
-  transition: all var(--transition-fast);
-}
-
-.route-pill:hover {
-  border-color: var(--accent-blue);
-  color: var(--accent-blue);
-}
-
-.multi-delivery-note {
-  margin-top: 1rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid var(--border-subtle);
-  font-size: 0.88rem;
-  color: var(--accent-gold);
   font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  line-height: 1.5;
+}
+
+.corridor-notice-text strong {
+  color: var(--accent-gold);
 }
 
 /* ==============================================================================
-   SERVICES SECTION (FTL, LTL, RENTAL, PRICING, SAFETY, AGRO)
+   SERVICES SECTION (5 CLEAN CARDS)
    ============================================================================== */
 .section-wrapper {
   padding-top: clamp(3.5rem, 6vw, 5.5rem);
@@ -750,9 +714,9 @@ button, input, select, textarea {
   line-height: 1.6;
 }
 
-.services-grid-6 {
+.services-grid-5 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -1201,9 +1165,10 @@ button, input, select, textarea {
 }
 
 .phone-btn.primary-phone {
-  background: rgba(16, 185, 129, 0.15);
-  color: #34D399;
-  border-color: rgba(16, 185, 129, 0.35);
+  background: rgba(16, 185, 129, 0.18);
+  color: #10B981;
+  border-color: rgba(16, 185, 129, 0.45);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);
 }
 
 .phone-btn:hover {
@@ -1238,7 +1203,7 @@ button, input, select, textarea {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  grid-template-columns: 1.4fr 0.9fr 1.2fr 1.3fr;
   gap: 2.5rem;
   margin-bottom: 2.5rem;
 }
@@ -1297,10 +1262,6 @@ button, input, select, textarea {
     margin: 0 auto;
   }
 
-  .services-grid-6 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .about-grid, .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -1353,10 +1314,6 @@ button, input, select, textarea {
   .hero-stats-row {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
-  }
-
-  .services-grid-6 {
-    grid-template-columns: 1fr;
   }
 
   .about-founders-row {
