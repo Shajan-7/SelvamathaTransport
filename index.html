@@ -104,11 +104,17 @@
 
       <!-- Header Controls: Language Switcher, Theme Toggle, Call & WhatsApp -->
       <div class="header-controls">
-        <!-- Language Switcher: EN | தமிழ் | മലയാളം -->
+        <!-- Language Switcher: EN | தமிழ் (தம) | മലയാളം (മല) -->
         <div class="lang-switcher" aria-label="Language Switcher">
-          <button type="button" class="lang-btn is-active interactive" data-lang="en">EN</button>
-          <button type="button" class="lang-btn interactive" data-lang="ta">தமிழ்</button>
-          <button type="button" class="lang-btn interactive" data-lang="ml">മലയാളം</button>
+          <button type="button" class="lang-btn is-active interactive" data-lang="en"><span>EN</span></button>
+          <button type="button" class="lang-btn interactive" data-lang="ta">
+            <span class="lang-full">தமிழ்</span>
+            <span class="lang-short">தம</span>
+          </button>
+          <button type="button" class="lang-btn interactive" data-lang="ml">
+            <span class="lang-full">മലയാളം</span>
+            <span class="lang-short">മല</span>
+          </button>
         </div>
 
         <!-- Light / Dark Theme Toggle Button -->

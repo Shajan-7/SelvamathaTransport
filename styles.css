@@ -367,6 +367,15 @@ button, input, select, textarea {
   color: var(--text-main);
 }
 
+.lang-full {
+  display: inline;
+}
+
+.lang-short {
+  display: none;
+}
+
+
 /* Theme Toggle Button */
 .theme-toggle-btn {
   display: flex;
@@ -1668,6 +1677,14 @@ button, input, select, textarea {
 
 /* Small Tablet / Phablet (max-width: 768px) */
 @media (max-width: 768px) {
+  .lang-full {
+    display: none;
+  }
+
+  .lang-short {
+    display: inline;
+  }
+
   .about-founders-row {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -1691,64 +1708,98 @@ button, input, select, textarea {
 /* Mobile Devices (max-width: 640px) */
 @media (max-width: 640px) {
   :root {
-    --header-height: 70px;
+    --header-height: 68px;
+  }
+
+  .navbar {
+    gap: 0.35rem;
   }
 
   /* Single-line header stability on mobile */
   .brand-badge {
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
   }
 
   .brand-badge img {
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
   }
 
   .brand-link {
-    gap: 0.6rem;
+    gap: 0.45rem;
+    min-width: 0;
+    flex-shrink: 1;
   }
 
   .brand-title {
-    font-size: 1.12rem;
-    letter-spacing: 0.04em;
+    font-size: 1.05rem;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
   }
 
   .brand-subtitle {
-    font-size: 0.62rem;
-    letter-spacing: 0.05em;
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
   }
 
   .header-controls {
-    gap: 0.45rem;
+    gap: 0.35rem;
     align-items: center;
+    flex-shrink: 0;
   }
 
   .lang-switcher {
     padding: 2px;
     gap: 1px;
+    flex-shrink: 0;
   }
 
   .lang-btn {
-    padding: 0.28rem 0.45rem;
+    padding: 0.22rem 0.42rem;
     font-size: 0.72rem;
   }
 
   .theme-toggle-btn {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
     flex-shrink: 0;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .theme-toggle-btn svg,
   .theme-icon-svg {
-    width: 19px;
-    height: 19px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    flex-shrink: 0;
+    padding: 2px;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .mobile-toggle svg {
+    width: 24px;
+    height: 24px;
   }
 
   /* Hide header WhatsApp icon on small mobile screens to keep brand, language, and theme toggle 100% visible without wrapping */
   .btn-header-whatsapp {
-    display: none;
+    display: none !important;
   }
 
   .drawer-theme-row {
@@ -1770,6 +1821,24 @@ button, input, select, textarea {
     font-weight: 700;
     color: var(--text-main);
   }
+}
+
+/* Extra Small Phones (max-width: 400px) */
+@media (max-width: 400px) {
+  .brand-subtitle {
+    display: none; /* Hide subtitle on tiny screens so logo + title + lang + theme + hamburger have massive breathing room */
+  }
+
+  .header-controls {
+    gap: 0.25rem;
+  }
+
+  .lang-btn {
+    padding: 0.2rem 0.32rem;
+    font-size: 0.68rem;
+  }
+}
+
 
   /* Hero Section Mobile */
   .hero-title {
