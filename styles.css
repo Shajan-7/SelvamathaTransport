@@ -372,25 +372,49 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--bg-card);
-  border: 1px solid var(--border-glass);
-  color: var(--text-main);
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-pill);
+  background: rgba(245, 158, 11, 0.15);
+  border: 1.5px solid rgba(245, 158, 11, 0.55);
+  color: var(--accent-gold);
   cursor: pointer;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.22);
   transition: all var(--transition-fast);
+  position: relative;
+}
+
+[data-theme="light"] .theme-toggle-btn {
+  background: rgba(37, 99, 235, 0.12);
+  border-color: rgba(37, 99, 235, 0.45);
+  color: var(--accent-blue-dark);
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
 }
 
 .theme-toggle-btn:hover {
+  transform: scale(1.08) rotate(12deg);
   border-color: var(--accent-gold);
-  transform: rotate(15deg);
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.45);
 }
 
-.theme-toggle-btn svg {
-  width: 18px;
-  height: 18px;
+[data-theme="light"] .theme-toggle-btn:hover {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 16px rgba(37, 99, 235, 0.35);
 }
+
+.theme-toggle-btn svg,
+.theme-icon-svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform var(--transition-normal);
+}
+
+.drawer-theme-row {
+  display: none;
+}
+
 
 /* Header CTA Buttons (Primary phone: 9487366449) */
 .btn-header-call {
@@ -1697,28 +1721,54 @@ button, input, select, textarea {
 
   .header-controls {
     gap: 0.45rem;
+    align-items: center;
+  }
+
+  .lang-switcher {
+    padding: 2px;
+    gap: 1px;
   }
 
   .lang-btn {
-    padding: 0.28rem 0.5rem;
+    padding: 0.28rem 0.45rem;
     font-size: 0.72rem;
   }
 
   .theme-toggle-btn {
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
   }
 
-  .btn-header-whatsapp span {
+  .theme-toggle-btn svg,
+  .theme-icon-svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  /* Hide header WhatsApp icon on small mobile screens to keep brand, language, and theme toggle 100% visible without wrapping */
+  .btn-header-whatsapp {
     display: none;
   }
 
-  .btn-header-whatsapp {
-    padding: 0.45rem;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
+  .drawer-theme-row {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-glass);
+  }
+
+  .drawer-theme-btn {
+    width: 100%;
+    height: 46px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
     justify-content: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-main);
   }
 
   /* Hero Section Mobile */

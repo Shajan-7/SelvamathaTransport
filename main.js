@@ -129,34 +129,42 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============================================================================
      3. LIGHT & DARK THEME SWITCHER
      ============================================================================ */
-  const themeToggleBtn = document.getElementById('themeToggleBtn');
-  const themeIcon = document.getElementById('themeIcon');
+  const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+  const themeIcons = document.querySelectorAll('.theme-icon-svg');
+  const drawerThemeLabel = document.getElementById('drawerThemeLabel');
   const savedTheme = localStorage.getItem('selvamatha_theme') || 'dark';
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('selvamatha_theme', theme);
 
-    if (themeIcon) {
-      if (theme === 'light') {
-        themeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />';
-        themeToggleBtn.setAttribute('title', 'Switch to Dark Mode');
-      } else {
-        themeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />';
-        themeToggleBtn.setAttribute('title', 'Switch to Light Mode');
-      }
+    const isLight = theme === 'light';
+    const sunSvg = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />';
+    const moonSvg = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />';
+
+    themeIcons.forEach((icon) => {
+      icon.innerHTML = isLight ? moonSvg : sunSvg;
+    });
+
+    themeToggleBtns.forEach((btn) => {
+      btn.setAttribute('title', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+      btn.setAttribute('aria-label', isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode');
+    });
+
+    if (drawerThemeLabel) {
+      drawerThemeLabel.textContent = isLight ? 'Switch to Dark Mode' : 'Switch to Light Mode';
     }
   }
 
   applyTheme(savedTheme);
 
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
+  themeToggleBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme') || 'dark';
       const nextTheme = current === 'dark' ? 'light' : 'dark';
       applyTheme(nextTheme);
     });
-  }
+  });
 
   /* ============================================================================
      4. MULTI-LANGUAGE TOGGLE (ENGLISH | தமிழ் | മലയാളം)
