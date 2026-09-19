@@ -13,23 +13,30 @@
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0A192F">
 
-  <!-- Canonical URL (Prevents duplicate content issues) -->
-  <link rel="canonical" href="https://www.selvamathatransport.com/">
+  <!-- Canonical URL (Apex Domain) -->
+  <link rel="canonical" href="https://selvamathatransport.com/">
+
+  <!-- Canonical Domain Redirection: www -> apex -->
+  <script>
+    if (window.location.hostname === 'www.selvamathatransport.com') {
+      window.location.replace('https://selvamathatransport.com' + window.location.pathname + window.location.search + window.location.hash);
+    }
+  </script>
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.selvamathatransport.com/">
+  <meta property="og:url" content="https://selvamathatransport.com/">
   <meta property="og:site_name" content="Selvamatha Transport">
   <meta property="og:title" content="Selvamatha Transport | Tamil Nadu ⇄ Kerala Daily Lorry Service">
   <meta property="og:description" content="Operating 15+ heavy commercial trucks since 1998. Daily freight service between Tamil Nadu and Kerala.">
   <!-- Use absolute URLs for images so link previews work reliably -->
-  <meta property="og:image" content="https://www.selvamathatransport.com/images/4%20lorry%20image%20with%20gap.png">
+  <meta property="og:image" content="https://selvamathatransport.com/images/4%20lorry%20image%20with%20gap.png">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Selvamatha Transport | Tamil Nadu ⇄ Kerala">
   <meta name="twitter:description" content="Dedicated daily lorry freight service between Tamil Nadu and Kerala with 15+ heavy commercial trucks.">
-  <meta name="twitter:image" content="https://www.selvamathatransport.com/images/4%20lorry%20image%20with%20gap.png">
+  <meta name="twitter:image" content="https://selvamathatransport.com/images/4%20lorry%20image%20with%20gap.png">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="images/crest_round.png">
@@ -49,9 +56,9 @@
       "Selvamatha Ponkani",
       "Ponkani Heavy Fleet"
     ],
-    "url": "https://www.selvamathatransport.com/",
-    "logo": "https://www.selvamathatransport.com/images/crest_round.png",
-    "image": "https://www.selvamathatransport.com/images/4%20lorry%20image%20with%20gap.png",
+    "url": "https://selvamathatransport.com/",
+    "logo": "https://selvamathatransport.com/images/crest_round.png",
+    "image": "https://selvamathatransport.com/images/4%20lorry%20image%20with%20gap.png",
     "legalName": "Selvamatha Transport (S. Xavier & Brother's)",
     "foundingDate": "1998",
     "founder": {
