@@ -281,6 +281,13 @@
   // Expose global dispatcher helper if custom events want to log conversions
   window.SelvamathaAnalytics = {
     sendCustomEvent: function (eventName, eventData) {
+      if (typeof window.gtag === 'function') {
+        try {
+          window.gtag('event', eventName, eventData || {});
+        } catch (e) {
+          // Non-blocking
+        }
+      }
       const now = new Date();
       sendTelemetryToGoogleSheets({
         timestampISO: now.toISOString(),
